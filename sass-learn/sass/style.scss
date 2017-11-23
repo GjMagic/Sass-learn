@@ -1,0 +1,79 @@
+@charset "utf-8";
+@import "base";
+
+$primary-color: #1265b6;
+$primary-border: 1px solid $primary-color;
+
+/*! 多行注释会包含在没有压缩之后的CSS里面 */
+
+// 单行注释不会出现在CSS里面
+div.box {
+  background-color: $primary-color;
+}
+
+h1.page-header {
+  border: $primary-border;
+}
+
+.nav {
+  height: 100px;
+  ul {
+    margin: 0;
+    li {
+      list-style: none;
+      float: left;
+      width: 100px;
+      height: 100px;
+      &:hover {
+        color: #ffffff;
+      }
+    }
+  }
+  & &-text {
+    font-size: 15px;
+  }
+}
+
+body {
+  font: {
+    family: Helvetica;
+    size: 15px;
+    weight: normal;
+  }
+}
+
+.nav {
+  border: 1px solid $primary-color {
+    left: 0;
+    right: 0;
+  }
+}
+
+@mixin alert($text-color, $background-color) {
+  color: $text-color;
+  background-color: $background-color;
+  a {
+    color: darken($text-color, 10%);
+  }
+}
+
+.alert-warning {
+  @include alert(#1234b4, #456cd4);
+}
+
+.alert-info {
+  @include alert($background-color: #423de2, $text-color: #ffffff)
+}
+
+.console {
+  margin-left: 5px;
+}
+
+.console a {
+  font-size: 12px;
+}
+
+.console-log {
+  @extend .console;
+  background: #ffffff;
+}

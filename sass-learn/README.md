@@ -1,32 +1,32 @@
-#sass语法学习
+# sass语法学习
 ---
-####一、编译
-######1.手动编译sass
+#### 一、编译
+###### 1.手动编译sass
 >sass sass/style.scss:css/style.css
 
-######2.自动编译sass
+###### 2.自动编译sass
 >sass --watch sass:css
 
-####二、修改编译输出的css格式
-######0.修改格式的代码:
+#### 二、修改编译输出的css格式
+###### 0.修改格式的代码:
 >sass --watch sass:css --style expanded
 
-######1.默认嵌套格式(nested)
-```
+###### 1.默认嵌套格式(nested)
+```js
   ul {
     font-size: 12px; }
     ul li {
       list-style: none; }
 ```
 
-######2.紧凑格式(compact)
-```
+###### 2.紧凑格式(compact)
+```js
 ul { font-size: 12px; }
 ul li { list-style: none; }
 ```
 
-######3.扩展格式(expanded)开发常用格式
-```
+###### 3.扩展格式(expanded)开发常用格式
+```js
 ul {
   font-size: 12px;
 }
@@ -35,14 +35,14 @@ ul li {
 }
 ```
 
-######4.压缩格式(compressed)生产环境使用
-```
+###### 4.压缩格式(compressed)生产环境使用
+```js
 ul{font-size:12px}ul li{list-style:none}
 ```
 
-####三、语法
-######1.定义变量：
-```
+#### 三、语法
+###### 1.定义变量：
+```js
 $primary-color: #1265b6;
 $primary-border: 1px solid $primary-color;
 
@@ -54,11 +54,11 @@ h1.page-header {
   border: $primary-border;
 }
 ```
-######2.嵌套：
+###### 2.嵌套：
 (1) 语法嵌套：
 >使用&的语法会引用父选择器
 
-```
+```js
 sass语法:
 .nav {
   height: 100px;
@@ -103,7 +103,7 @@ css语法:
 
 (2) 属性嵌套：
 >属性嵌套时，写成对象的形式
-```
+```js
 sass语法：
 body {
   font: {
@@ -133,9 +133,9 @@ body {
   border-right: 0;
 }
 ```
-######3.mixin混合
+###### 3.mixin混合
 (1)语法：
-```
+```js
 @mixin 名字 [(参数1, 参数2)] {
   ...
 }
@@ -143,7 +143,7 @@ body {
 (2)例子：
 >@mixin用来定义，就像js里的function一样。@include用来调用。
 @mixin里面也可以嵌套等
-```
+```js
 sass语法：
 @mixin alert($text-color, $background-color) {
   color: $text-color;
@@ -180,9 +180,9 @@ css语法：
 }
 ```
 
-######4.@extend继承
+###### 4.@extend继承
 >使用关键字@extend。继承会继承所有
-```
+```js
 sass语法：
 .console {
   margin-left: 5px;
@@ -212,11 +212,11 @@ css语法：
 }
 ```
 
-######5.Partials 与 @import
+###### 5.Partials 与 @import
 >在一个scss文件里包含其他scss文件，减少HTTP请求
 
 (1)语法：
-```
+```js
 sass语法：
 @import "base"(不需要加_和.scss)
 
@@ -228,7 +228,7 @@ body {
 }
 ```
 
-######6.注释
+###### 6.注释
 (1)sass中文注释编译出错解决办法：
   
 方法1：(试验后法一无用，参考方法2)
@@ -249,7 +249,7 @@ Encoding.default_external = Encoding.find('utf-8')
 @charset "utf-8";
 
 (2)注释使用：
-```
+```js
 /* 多行注释会包含在没有压缩之后的CSS里面 */
 
 // 单行注释不会出现在CSS里面
@@ -258,5 +258,5 @@ Encoding.default_external = Encoding.find('utf-8')
   1、CSS输出格式为压缩格式(compressed)时，多行、单行注释都不存在 
   2、如果一定要在压缩格式里面显示注释，则加！即可
     /*！ 强制注释 */
-*/
+
 ```

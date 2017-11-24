@@ -12,7 +12,7 @@
 >sass --watch sass:css --style expanded
 
 ###### 1.默认嵌套格式(nested)
-```js
+```javascript
   ul {
     font-size: 12px; }
     ul li {
@@ -20,13 +20,13 @@
 ```
 
 ###### 2.紧凑格式(compact)
-```js
+```javascript
 ul { font-size: 12px; }
 ul li { list-style: none; }
 ```
 
 ###### 3.扩展格式(expanded)开发常用格式
-```js
+```javascript
 ul {
   font-size: 12px;
 }
@@ -36,13 +36,13 @@ ul li {
 ```
 
 ###### 4.压缩格式(compressed)生产环境使用
-```js
+```javascript
 ul{font-size:12px}ul li{list-style:none}
 ```
 
 #### 三、语法
 ###### 1.定义变量：
-```js
+```javascript
 $primary-color: #1265b6;
 $primary-border: 1px solid $primary-color;
 
@@ -58,7 +58,7 @@ h1.page-header {
 (1) 语法嵌套：
 >使用&的语法会引用父选择器
 
-```js
+```javascript
 sass语法:
 .nav {
   height: 100px;
@@ -103,7 +103,7 @@ css语法:
 
 (2) 属性嵌套：
 >属性嵌套时，写成对象的形式
-```js
+```javascript
 sass语法：
 body {
   font: {
@@ -135,15 +135,15 @@ body {
 ```
 ###### 3.mixin混合
 (1)语法：
-```js
+```javascript
 @mixin 名字 [(参数1, 参数2)] {
   ...
 }
 ```
 (2)例子：
->@mixin用来定义，就像js里的function一样。@include用来调用。
+>@mixin用来定义，就像javascript里的function一样。@include用来调用。
 @mixin里面也可以嵌套等
-```js
+```javascript
 sass语法：
 @mixin alert($text-color, $background-color) {
   color: $text-color;
@@ -182,7 +182,7 @@ css语法：
 
 ###### 4.@extend继承
 >使用关键字@extend。继承会继承所有
-```js
+```javascript
 sass语法：
 .console {
   margin-left: 5px;
@@ -216,7 +216,7 @@ css语法：
 >在一个scss文件里包含其他scss文件，减少HTTP请求
 
 (1)语法：
-```js
+```javascript
 sass语法：
 @import "base"(不需要加_和.scss)
 
@@ -249,7 +249,7 @@ Encoding.default_external = Encoding.find('utf-8')
 @charset "utf-8";
 
 (2)注释使用：
-```js
+```javascript
 /* 多行注释会包含在没有压缩之后的CSS里面 */
 
 // 单行注释不会出现在CSS里面
@@ -260,3 +260,44 @@ Encoding.default_external = Encoding.find('utf-8')
     /*！ 强制注释 */
 
 ```
+
+#### 四、函数
+###### 1.数据类型
+>1、在命令行输入 sass -i即可，打开sass交互功能
+>2、使用type-of()来判断数据类型
+```
+  (1)>> type-of(1)
+    "number"
+  (2)>> type-of(red)
+    "color"
+  (3)>> type-of(hello)
+    "string"
+  (4)>> type-of(1px solid #fff)
+    "list"
+```
+
+###### 2.数字计算
+>1、在命令行输入 sass -i即可，打开sass交互功能
+>2、符合一切加减乘的规则，但进行除法运算时需要加括号，因为 / 在css中有别的用法
+```
+  (1)>> 3px + 2px
+    5px
+  (2)>> 3px * 2
+    6px
+  (3)>> 3px * 2px
+    6px*px
+  (4)>> (6px / 2)
+    3px
+  (5)>> (6px / 2px)
+    3
+  (6)>> 6px / 2
+    6px/2
+```
+
+###### 3.数字函数
+>1、abs()取绝对值、round()四舍五入、ceil()向上取整、floor()向下取整
+>percentage()取百分数、min()取最小值、max()取最大值
+
+
+###### 4.字符串
+>字符串只有相加的功能，没有减、乘、除。

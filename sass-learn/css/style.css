@@ -1,2 +1,75 @@
-﻿body{padding:0;margin:0}/*! 多行注释会包含在没有压缩之后的CSS里面 */div.box{background-color:#1265b6}h1.page-header{border:1px solid #1265b6}.nav{height:100px}.nav ul{margin:0}.nav ul li{list-style:none;float:left;width:100px;height:100px}.nav ul li:hover{color:#ffffff}.nav .nav-text{font-size:15px}body{font-family:Helvetica;font-size:15px;font-weight:normal}.nav{border:1px solid #1265b6;border-left:0;border-right:0}.alert-warning{color:#1234b4;background-color:#456cd4}.alert-warning a{color:#0d2786}.alert-info{color:#fff;background-color:#423de2}.alert-info a{color:#e6e6e6}.console,.console-log{margin-left:5px}.console a,.console-log a{font-size:12px}.console-log{background:#ffffff}
+@charset "UTF-8";
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/*! 多行注释会包含在没有压缩之后的CSS里面 */
+div.box {
+  background-color: #1265b6;
+}
+
+h1.page-header {
+  border: 1px solid #1265b6;
+}
+
+.nav {
+  height: 100px;
+}
+.nav ul {
+  margin: 0;
+}
+.nav ul li {
+  list-style: none;
+  float: left;
+  width: 100px;
+  height: 100px;
+}
+.nav ul li:hover {
+  color: #ffffff;
+}
+.nav .nav-text {
+  font-size: 15px;
+}
+
+body {
+  font-family: Helvetica;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.nav {
+  border: 1px solid #1265b6;
+  border-left: 0;
+  border-right: 0;
+}
+
+.alert-warning {
+  color: #1234b4;
+  background-color: #456cd4;
+}
+.alert-warning a {
+  color: #0d2786;
+}
+
+.alert-info {
+  color: #ffffff;
+  background-color: #423de2;
+}
+.alert-info a {
+  color: #e6e6e6;
+}
+
+.console, .console-log {
+  margin-left: 5px;
+}
+
+.console a, .console-log a {
+  font-size: 12px;
+}
+
+.console-log {
+  background: #ffffff;
+}
+
 /*# sourceMappingURL=style.css.map */

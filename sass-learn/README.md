@@ -298,6 +298,120 @@ Encoding.default_external = Encoding.find('utf-8')
 >1、abs()取绝对值、round()四舍五入、ceil()向上取整、floor()向下取整
 >percentage()取百分数、min()取最小值、max()取最大值
 
-
 ###### 4.字符串
 >字符串只有相加的功能，没有减、乘、除。
+
+###### 5.字符串函数
+>to-upper-case(), to-lower-case(), str-length(), str-index(), str-insert()
+```
+$emao: "hello emao"
+>>to-upper-case($emao)使字符串大写
+"HELLO EMAO"
+>>to-lower-case($emao)使字符串小写
+"hello emao"
+>>str-length($emao)求变量字符串长度
+10
+>>str-index($emao, "hello")求指定字符串在变量的位置下标
+1
+>>str-insert($emao, ".net", 11)向变量的某个位置插入某个字符串
+```
+
+###### 6.颜色函数
+> (1) hsl(色相，饱和度，明度)
+```
+sass语法：
+background: hsl(0, 100, 50%);
+css语法：
+background: red;
+```
+
+>(2) adjust-hue()调整色相
+```
+sass语法：
+$primary-color: #1265b6;
+color: adjust-hue($primary-color, 137deg);
+css语法：
+color: #b61237;
+```
+
+>(3)lighten()、darken()调整颜色的明度
+```
+sass语法：
+$base-color: hsl(222, 100%, 50%);
+$light-color: lighten($base-color, 30%);
+$dark-color: darken($base-color, 20%);
+
+.alert-color {
+  border: 1px solid $base-color;
+  background-color: $light-color;
+  color: $dark-color;
+}
+
+css语法：
+.alert-color {
+  border: 1px solid #004dff;
+  background-color: #99b8ff;
+  color: #002e99;
+}
+```
+
+>(4)saturate()、desaturate()调整颜色的饱和度
+```
+sass语法：
+$base-color: hsl(222, 50%, 50%);
+$saturate: saturate($base-color, 50%);
+$desaturate: desaturate($base-color, 30%);
+
+.alert-color-ex {
+  background-color: $saturate;
+  color: $desaturate;
+}
+
+css语法：
+.alert-color-ex {
+  background-color: #004dff;
+  color: #667599;
+}
+```
+
+>(5)opacify()增加颜色不透明度、transparentize()减少颜色不透明度
+```
+sass语法：
+$base-color: hsla(222, 50%, 50%, .5);
+$fade-in-color: opacify($base-color, .3);
+$fade-out-color: transparentize($base-color, .2);
+
+.alert-color-fade {
+  background-color: $fade-in-color;
+  color: $fade-out-color;
+}
+
+css语法：
+.alert-color-fade {
+  background-color: rgba(64, 102, 191, 0.8);
+  color: rgba(64, 102, 191, 0.3);
+}
+```
+
+###### 7.列表函数(list)
+>在sass中什么是列表？
+sass中属性声明的一串值，可以用空格分隔开，也可以用逗号分隔开。
+```
+border: 1px solid #fff;(border属性的值就是一个列表)
+font-family: Ahem!, sans-serif;(font-family的值就是一个列表)
+```
+>列表函数：
+```
+>>length(1px solid #fff)求列表的长度
+3
+>>nth(2px 3px 1px 4px, 3)求指定位置列表的值
+1px
+>>index(2px 1px solid #fff, solid)求列表指定值的位置
+3
+>>append(2px 1px, solid)往列表后插入一个值
+(2px 1px solid)
+>>join(1px, solid #fff)把两个列表结合(默认以空格结合)
+(1px solid #fff)
+>>join(1px 2px, 3px 4px, comma)把两个列表以逗号结合
+(1px, 2px, 3px, 4px)
+```

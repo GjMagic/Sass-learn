@@ -69,7 +69,24 @@ body {
 }
 
 .console-log {
-  background: #ffffff;
+  background: red;
+  color: #b61237;
+}
+
+.alert-color {
+  border: 1px solid rgba(64, 102, 191, 0.5);
+  background-color: rgba(179, 194, 230, 0.5);
+  color: rgba(38, 61, 115, 0.5);
+}
+
+.alert-color-ex {
+  background-color: rgba(0, 77, 255, 0.5);
+  color: rgba(102, 117, 153, 0.5);
+}
+
+.alert-color-fade {
+  background-color: rgba(64, 102, 191, 0.8);
+  color: rgba(64, 102, 191, 0.3);
 }
 
 /*# sourceMappingURL=style.css.map */

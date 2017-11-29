@@ -415,3 +415,66 @@ font-family: Ahem!, sans-serif;(font-family的值就是一个列表)
 >>join(1px 2px, 3px 4px, comma)把两个列表以逗号结合
 (1px, 2px, 3px, 4px)
 ```
+
+###### 8.map类型数据(跟list很相似)
+>map数据格式(key1: value1, key2: value2, key3: value3)
+注：用在列表类型数据上的方法同样可以用在map类型数据上
+```
+$colors: (light: #fff, dark: #000)
+>>length($colors)
+2
+>>map-get($colors, light)获得map数据key指定的value值
+#ffffff
+>>map-get($colors, dark)
+#000000
+>>map-keys($colors)获得所有map数据的key值
+("light", "dark")
+>>map-values($colors)获得所有map数据的value值
+(#ffffff, #000000)
+>>map-has-key($colors, light)map数据是否有指定的key值，返回值为true或false
+true
+>>map-has-key($colors, darken)
+false
+>>map-merge($colors, (gray: #eee))合并map数据
+(light: #fff, dark: #000, gray: #eee)
+>>$colors: map-merge($colors, (gray: #eee))把合并后的数据赋给$colors
+(light: #fff, dark: #000, gray: #eee)
+>>map-remove($colors, dark)删除map数据指定的key: value
+(light: #fff, gray: #eee)
+```
+
+###### 9.布尔值boolean
+>and、or、not(且、或、非)
+```
+>> 5px < 3px
+false
+>> (5px > 3px) and (5px < 3px)且
+false
+>> (5px > 3px) or (5px < 3px)或
+true
+>> (5px > 3px) or (2px < 3px)
+true
+>> (5px > 3px) and (2px < 3px)
+true
+>> not(5px > 3px)非
+false
+>> not(5px < 3px)
+true
+```
+
+###### 10.Interpolation
+>#{变量名} 把一个值插入到另一个值里
+```
+sass语法：
+$name: "info";
+$attr: "border"
+
+.alert-#{$name} {
+  #{$attr}-color: #fff;
+}
+
+css语法：
+.alert-info {
+  border-color: #ffffff;
+}
+```

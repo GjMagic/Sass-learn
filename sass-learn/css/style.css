@@ -89,4 +89,8 @@ body {
   color: rgba(64, 102, 191, 0.3);
 }
 
+.alert-info {
+  border-color: #ffffff;
+}
+
 /*# sourceMappingURL=style.css.map */

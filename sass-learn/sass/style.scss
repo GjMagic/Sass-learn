@@ -102,3 +102,10 @@ $dark-color: darken($base-color, 20%);
   background-color: $fade-in-color;
   color: $fade-out-color;
 }
+
+$name: "info";
+$attr: "border";
+
+.alert-#{$name} {
+  #{$attr}-color: #ffffff;
+}
